@@ -1,11 +1,8 @@
 {
   "name": "fast-console",
-  "version": "1.0.0",
-  "description": "fast-console",
+  "version": "0.0.2",
+  "description": "fast console from mobile",
   "main": "index.js",
-  "directories": {
-    "test": "test"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config ./build/webpack.config.js"
