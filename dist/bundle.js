@@ -50,31 +50,15 @@
 	
 	var _index2 = _interopRequireDefault(_index);
 	
-	var _jquery = __webpack_require__(10);
+	var _main = __webpack_require__(10);
 	
-	var _jquery2 = _interopRequireDefault(_jquery);
+	var _main2 = _interopRequireDefault(_main);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	console.log(_index2.default);
-	var html = '<div class="fast-console" id="fast-console">\n            \t<div class="co-header">\n            \t\t<div class="co-menu console focus">Console</div>\n            \t\t<div class="co-menu network">Network</div>\n            \t\t<div class="co-menu element">Element</div>\n            \t</div>\n            \t<div class="main">\n                <div class="console-pane pane">console</div>\n                <div class="network-pane pane">network</div>\n                <div class="element-pane pane">element</div>\n            \t</div>\n            </div>';
+	var $node = (0, _main2.default)();
 	
-	var $node = (0, _jquery2.default)(html);
-	(0, _jquery2.default)('body').append($node);
-	var $main = $node.find('.main');
-	$node.on('click', '.co-menu', function () {
-	  $node.find(".co-menu").removeClass('.focus');
-	  var $this = (0, _jquery2.default)(this);
-	  $this.addClass('.focus');
-	  $main.find('.pane').hide();
-	  if ($this.hasClass('console')) {
-	    $main.find('.console-pane').show();
-	  } else if ($this.hasClass('network')) {
-	    $main.find('.network-pane').show();
-	  } else if ($this.hasClass('element')) {
-	    $main.find('.element-pane').show();
-	  }
-	});
 	console.log($node);
 
 /***/ }),
@@ -2341,6 +2325,56 @@
 
 /***/ }),
 /* 10 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	var _html = __webpack_require__(11);
+	
+	var _html2 = _interopRequireDefault(_html);
+	
+	var _jquery = __webpack_require__(12);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var html = (0, _html2.default)();
+	var $node = (0, _jquery2.default)(html);
+	
+	(0, _jquery2.default)('body').append($node);
+	var $main = $node.find('.main');
+	$node.on('click', '.co-menu', function () {
+	  $node.find(".co-menu").removeClass('focus');
+	  var $this = (0, _jquery2.default)(this);
+	  $this.addClass('focus');
+	  $main.find('.pane').hide();
+	  if ($this.hasClass('console')) {
+	    $main.find('.console-pane').show();
+	  } else if ($this.hasClass('network')) {
+	    $main.find('.network-pane').show();
+	  } else if ($this.hasClass('element')) {
+	    $main.find('.element-pane').show();
+	  }
+	});
+
+/***/ }),
+/* 11 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	            value: true
+	});
+	
+	exports.default = function () {
+	            var html = "<div class=\"fast-console\" id=\"fast-console\">\n              \t<div class=\"co-header\">\n              \t\t<div class=\"co-menu console focus\">Console</div>\n              \t\t<div class=\"co-menu network\">Network</div>\n              \t\t<div class=\"co-menu element\">Element</div>\n              \t</div>\n              \t<div class=\"main\">\n                  <div class=\"console-pane pane\">console</div>\n                  <div class=\"network-pane pane\">network</div>\n                  <div class=\"element-pane pane\">element</div>\n              \t</div>\n              </div>";
+	            return html;
+	};
+
+/***/ }),
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 	var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/* WEBPACK VAR INJECTION */(function(module) {"use strict";
@@ -10306,10 +10340,10 @@
 	
 		return jQuery;
 	});
-	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(11)(module)))
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(13)(module)))
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports) {
 
 	"use strict";
