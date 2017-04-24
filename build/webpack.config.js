@@ -11,7 +11,7 @@ var conf = {
     loaders:[{
       test: /.\js$/,
       loader: 'babel!eslint'
-    }]
+    },{ test: /\.css/, loader: "style-loader!css-loader" }]
   }
   // plugins: [
   //   new webpack.optimize.UglifyJsPlugin()

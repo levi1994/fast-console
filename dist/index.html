@@ -1,16 +1,27 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Canvas</title>
-	<meta name="charset" content="utf8">
-
-	<!-- <link rel="stylesheet" type="text/css" href="index.css"> -->
+	<title>fast-console</title>
+	<meta charset = "UTF-8"
+     <!-- 优先使用 IE 最新版本和 Chrome -->
+     <meta http-equiv = "X-UA-Compatible" content = "IE=edge,chrome=1" />
+     <meta name = "viewport" content = "width=device-width,initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+     <meta http-equiv = "Pragma" content = "no-cache">
+     <meta http-equiv = "Cache-Control" content = "no-cache">
+     <meta http-equiv = "Expires" content = "0">
 </head>
 <body>
-<div class="wrap" style="position:relative;">
-<canvas id="canvas" width="500px" height="500px"></canvas>
+这里是页面内容
+<div class="fast-console" id="fast-console">
+	<div class="co-header">
+		<div class="console focus">Console</div>
+		<div class="network">Network</div>
+		<div class="element">Element</div>
+	</div>
+	<div class="main">
+		This is main content
+	</div>
 </div>
 </body>
 <script type="text/javascript" src="bundle.js"></script>
-<script type="text/javascript" src="index.js"></script>
 </html>
