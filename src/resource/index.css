@@ -28,3 +28,6 @@
   background: rgba(255, 255, 255, 0.24);
   border-bottom: 4px solid #fff;
 }
+.main .element-pane,.main .network-pane{
+  display: none;
+}

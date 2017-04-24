@@ -24,6 +24,8 @@
     "webpack": "^1.13.2",
     "loader-utils": "^0.2.16",
     "css-loader": "*",
-    "style-loader": "*"
+    "style-loader": "*",
+    "jquery": "1.11.1",
+    "html-webpack-plugin": "*"
   }
 }
