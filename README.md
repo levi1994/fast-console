@@ -1,0 +1,2 @@
+# fast-console
+fast-console
