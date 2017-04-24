@@ -12,6 +12,7 @@
   background: rgb(32, 160, 255);
   box-shadow: -1px 1px 8px #989898;
   cursor: pointer;
+  position: fixed;
 }
 .co-header div{
   display: block;
@@ -24,10 +25,40 @@
   box-sizing: border-box;
   font-size: 14px;
 }
+.fast-console .main{
+  position: absolute;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 .co-header div.focus{
   background: rgba(255, 255, 255, 0.24);
   border-bottom: 4px solid #fff;
 }
 .main .element-pane,.main .network-pane{
   display: none;
+}
+.console-pane .tools{
+  height: 34px;
+  background: #fff;
+  box-shadow: 1px 1px 1px #ccc;
+}
+.console-pane .tools > div {
+  display: block;
+      float: left;
+      margin-left: 6px;
+      height: 16px;
+      line-height: 16px;
+      border-radius: 4px;
+      background: #fff;
+      color: #000;
+      padding: 4px 6px;
+      font-size: 12px;
+      margin-top: 4px
+}
+
+.console-pane .tools > div.focus{
+  background: #5f5f5f;
+  color: #fff;
 }

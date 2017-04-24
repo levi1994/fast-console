@@ -54,10 +54,16 @@
 	
 	var _main2 = _interopRequireDefault(_main);
 	
+	var _console = __webpack_require__(14);
+	
+	var _console2 = _interopRequireDefault(_console);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	console.log(_index2.default);
+	
 	var $node = (0, _main2.default)();
+	(0, _console2.default)($node);
 	
 	console.log($node);
 
@@ -96,7 +102,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".fast-console{\r\n  position: fixed;\r\n  top:0;\r\n  bottom: 0;\r\n  left:0;\r\n  right: 0;\r\n}\r\n.fast-console .co-header{\r\n  display: block;\r\n  width: 100%;\r\n  height: 56px;\r\n  background: rgb(32, 160, 255);\r\n  box-shadow: -1px 1px 8px #989898;\r\n  cursor: pointer;\r\n}\r\n.co-header div{\r\n  display: block;\r\n  float: left;\r\n  width: auto;\r\n  height: 100%;\r\n  line-height: 56px;\r\n  padding: 0 20px;\r\n  color: #fff;\r\n  box-sizing: border-box;\r\n  font-size: 14px;\r\n}\r\n.co-header div.focus{\r\n  background: rgba(255, 255, 255, 0.24);\r\n  border-bottom: 4px solid #fff;\r\n}\r\n.main .element-pane,.main .network-pane{\r\n  display: none;\r\n}\r\n", ""]);
+	exports.push([module.id, ".fast-console{\r\n  position: fixed;\r\n  top:0;\r\n  bottom: 0;\r\n  left:0;\r\n  right: 0;\r\n}\r\n.fast-console .co-header{\r\n  display: block;\r\n  width: 100%;\r\n  height: 56px;\r\n  background: rgb(32, 160, 255);\r\n  box-shadow: -1px 1px 8px #989898;\r\n  cursor: pointer;\r\n  position: fixed;\r\n}\r\n.co-header div{\r\n  display: block;\r\n  float: left;\r\n  width: auto;\r\n  height: 100%;\r\n  line-height: 56px;\r\n  padding: 0 20px;\r\n  color: #fff;\r\n  box-sizing: border-box;\r\n  font-size: 14px;\r\n}\r\n.fast-console .main{\r\n  position: absolute;\r\n  top: 60px;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n.co-header div.focus{\r\n  background: rgba(255, 255, 255, 0.24);\r\n  border-bottom: 4px solid #fff;\r\n}\r\n.main .element-pane,.main .network-pane{\r\n  display: none;\r\n}\r\n.console-pane .tools{\r\n  height: 34px;\r\n  background: #fff;\r\n  box-shadow: 1px 1px 1px #ccc;\r\n}\r\n.console-pane .tools > div {\r\n  display: block;\r\n      float: left;\r\n      margin-left: 6px;\r\n      height: 16px;\r\n      line-height: 16px;\r\n      border-radius: 4px;\r\n      background: #fff;\r\n      color: #000;\r\n      padding: 4px 6px;\r\n      font-size: 12px;\r\n      margin-top: 4px\r\n}\r\n\r\n.console-pane .tools > div.focus{\r\n  background: #5f5f5f;\r\n  color: #fff;\r\n}\r\n", ""]);
 	
 	// exports
 
@@ -2329,6 +2335,34 @@
 
 	'use strict';
 	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports.default = function () {
+	  var html = (0, _html2.default)();
+	  var $node = (0, _jquery2.default)(html);
+	
+	  (0, _jquery2.default)('body').append($node);
+	
+	  var $main = $node.find('.main');
+	  $node.on('click', '.co-menu', function () {
+	    $node.find(".co-menu").removeClass('focus');
+	    var $this = (0, _jquery2.default)(this);
+	    $this.addClass('focus');
+	    $main.find('.pane').hide();
+	    if ($this.hasClass('console')) {
+	      $main.find('.console-pane').show();
+	    } else if ($this.hasClass('network')) {
+	      $main.find('.network-pane').show();
+	    } else if ($this.hasClass('element')) {
+	      $main.find('.element-pane').show();
+	    }
+	  });
+	
+	  return $node;
+	};
+	
 	var _html = __webpack_require__(11);
 	
 	var _html2 = _interopRequireDefault(_html);
@@ -2336,27 +2370,8 @@
 	var _jquery = __webpack_require__(12);
 	
 	var _jquery2 = _interopRequireDefault(_jquery);
-	
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-	
-	var html = (0, _html2.default)();
-	var $node = (0, _jquery2.default)(html);
-	
-	(0, _jquery2.default)('body').append($node);
-	var $main = $node.find('.main');
-	$node.on('click', '.co-menu', function () {
-	  $node.find(".co-menu").removeClass('focus');
-	  var $this = (0, _jquery2.default)(this);
-	  $this.addClass('focus');
-	  $main.find('.pane').hide();
-	  if ($this.hasClass('console')) {
-	    $main.find('.console-pane').show();
-	  } else if ($this.hasClass('network')) {
-	    $main.find('.network-pane').show();
-	  } else if ($this.hasClass('element')) {
-	    $main.find('.element-pane').show();
-	  }
-	});
 
 /***/ }),
 /* 11 */
@@ -2369,7 +2384,7 @@
 	});
 	
 	exports.default = function () {
-	            var html = "<div class=\"fast-console\" id=\"fast-console\">\n              \t<div class=\"co-header\">\n              \t\t<div class=\"co-menu console focus\">Console</div>\n              \t\t<div class=\"co-menu network\">Network</div>\n              \t\t<div class=\"co-menu element\">Element</div>\n              \t</div>\n              \t<div class=\"main\">\n                  <div class=\"console-pane pane\">console</div>\n                  <div class=\"network-pane pane\">network</div>\n                  <div class=\"element-pane pane\">element</div>\n              \t</div>\n              </div>";
+	            var html = "<div class=\"fast-console\" id=\"fast-console\">\n              \t<div class=\"co-header\">\n              \t\t<div class=\"co-menu console focus\">Console</div>\n              \t\t<div class=\"co-menu network\">Network</div>\n              \t\t<div class=\"co-menu element\">Element</div>\n              \t</div>\n              \t<div class=\"main\">\n                  <div class=\"console-pane pane\">\n                  </div>\n                  <div class=\"network-pane pane\">network</div>\n                  <div class=\"element-pane pane\">element</div>\n              \t</div>\n              </div>";
 	            return html;
 	};
 
@@ -10357,6 +10372,120 @@
 			module.webpackPolyfill = 1;
 		}
 		return module;
+	};
+
+/***/ }),
+/* 14 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports.default = function ($node) {
+	
+	  var html = (0, _html2.default)();
+	  var $tools = (0, _jquery2.default)(html);
+	
+	  var logList = [];
+	
+	  var logType = 0;
+	
+	  var $root = $node;
+	
+	  var _log = window.console.log;
+	  var _warning = window.console.warning;
+	  var _error = window.console.error;
+	
+	  window.console.log = function (message) {
+	    logList.push({ message: message, type: 1 });
+	    _log(message);
+	    printLog($root, logType);
+	  };
+	  window.console.warning = function (message) {
+	    logList.push({ message: message, type: 2 });
+	    _warning(message);
+	    printLog($root, logType);
+	  };
+	  window.console.error = function (message) {
+	    logList.push({ message: message, type: 3 });
+	    _error(message);
+	    printLog($root, logType);
+	  };
+	
+	  window.onerror = function (message, source, lineno, colno, error) {
+	    logList.push({
+	      message: message,
+	      source: source,
+	      lineno: lineno,
+	      colno: colno,
+	      error: error,
+	      type: 4
+	    });
+	    printLog($root, logType);
+	  };
+	
+	  function printLog($root, type) {
+	    var filterArray = void 0;
+	    if (type === 0) {
+	      filterArray = logList;
+	    } else {
+	      filterArray = logList.filter(function (item) {
+	        return item.type === type || item.type === 4;
+	      });
+	    }
+	
+	    render($root, filterArray);
+	  }
+	
+	  function render($root, array) {
+	    $root.find(".log-container").empty();
+	    var $logitem = (0, _jquery2.default)('<div class="logitem"></div>');
+	
+	    for (var key in array) {
+	      var $item = $logitem.clone();
+	      var data = array[key];
+	      $item.text(data.message);
+	      if (data.type === 2) {
+	        $item.addClass('t-warn');
+	      } else if (data.type === 3 || data.type === 4) {
+	        $item.addClass('t-error');
+	      }
+	
+	      $root.find('.log-container').append($item);
+	    }
+	  }
+	
+	  $root.find('.console-pane').append($tools);
+	
+	  printLog($root, 0);
+	};
+	
+	var _html = __webpack_require__(15);
+	
+	var _html2 = _interopRequireDefault(_html);
+	
+	var _jquery = __webpack_require__(12);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+/* 15 */
+/***/ (function(module, exports) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	exports.default = function () {
+	  var html = "<div class=\"tools\">\n                <div class=\"clear\">Clear</div>\n                <div class=\"all focus\">All</div>\n                <div class=\"error\">Error</div>\n                <div class=\"warning\">Warning</div>\n                <div class=\"info\">Info</div>\n                <div class=\"log\">Log</div>\n              </div>\n              <div class=\"log-container\"></div>\n  ";
+	  return html;
 	};
 
 /***/ })

@@ -6,7 +6,8 @@ export default function() {
               		<div class="co-menu element">Element</div>
               	</div>
               	<div class="main">
-                  <div class="console-pane pane">console</div>
+                  <div class="console-pane pane">
+                  </div>
                   <div class="network-pane pane">network</div>
                   <div class="element-pane pane">element</div>
               	</div>
