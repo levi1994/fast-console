@@ -65,7 +65,10 @@
 	var $node = (0, _main2.default)();
 	(0, _console2.default)($node);
 	
-	console.log($node);
+	console.log("This is log");
+	console.warn("This is warn");
+	console.error("This is error");
+	console.info("This is info");
 
 /***/ }),
 /* 1 */
@@ -102,7 +105,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".fast-console{\r\n  position: fixed;\r\n  top:0;\r\n  bottom: 0;\r\n  left:0;\r\n  right: 0;\r\n}\r\n.fast-console .co-header{\r\n  display: block;\r\n  width: 100%;\r\n  height: 56px;\r\n  background: rgb(32, 160, 255);\r\n  box-shadow: -1px 1px 8px #989898;\r\n  cursor: pointer;\r\n  position: fixed;\r\n}\r\n.co-header div{\r\n  display: block;\r\n  float: left;\r\n  width: auto;\r\n  height: 100%;\r\n  line-height: 56px;\r\n  padding: 0 20px;\r\n  color: #fff;\r\n  box-sizing: border-box;\r\n  font-size: 14px;\r\n}\r\n.fast-console .main{\r\n  position: absolute;\r\n  top: 60px;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n.co-header div.focus{\r\n  background: rgba(255, 255, 255, 0.24);\r\n  border-bottom: 4px solid #fff;\r\n}\r\n.main .element-pane,.main .network-pane{\r\n  display: none;\r\n}\r\n.console-pane .tools{\r\n  height: 34px;\r\n  background: #fff;\r\n  box-shadow: 1px 1px 1px #ccc;\r\n}\r\n.console-pane .tools > div {\r\n  display: block;\r\n      float: left;\r\n      margin-left: 6px;\r\n      height: 16px;\r\n      line-height: 16px;\r\n      border-radius: 4px;\r\n      background: #fff;\r\n      color: #000;\r\n      padding: 4px 6px;\r\n      font-size: 12px;\r\n      margin-top: 4px\r\n}\r\n\r\n.console-pane .tools > div.focus{\r\n  background: #5f5f5f;\r\n  color: #fff;\r\n}\r\n", ""]);
+	exports.push([module.id, ".fast-console{\r\n  position: fixed;\r\n  top:0;\r\n  bottom: 0;\r\n  left:0;\r\n  right: 0;\r\n}\r\n.fast-console .co-header{\r\n  display: block;\r\n  width: 100%;\r\n  height: 56px;\r\n  background: rgb(32, 160, 255);\r\n  box-shadow: -1px 1px 8px #989898;\r\n  cursor: pointer;\r\n  position: fixed;\r\n}\r\n.co-header div{\r\n  display: block;\r\n  float: left;\r\n  width: auto;\r\n  height: 100%;\r\n  line-height: 56px;\r\n  padding: 0 20px;\r\n  color: #fff;\r\n  box-sizing: border-box;\r\n  font-size: 14px;\r\n}\r\n.fast-console .main{\r\n  position: absolute;\r\n  top: 60px;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n.co-header div.focus{\r\n  background: rgba(255, 255, 255, 0.24);\r\n  border-bottom: 4px solid #fff;\r\n}\r\n.main .element-pane,.main .network-pane{\r\n  display: none;\r\n}\r\n.console-pane .tools{\r\n  width: 100%;\r\n  position: absolute;\r\n  height: 34px;\r\n  background: #fff;\r\n  box-shadow: 1px 1px 1px #ccc;\r\n}\r\n.console-pane .tools > div {\r\n  display: block;\r\n      float: left;\r\n      margin-left: 6px;\r\n      height: 16px;\r\n      line-height: 16px;\r\n      border-radius: 4px;\r\n      background: #fff;\r\n      color: #000;\r\n      padding: 4px 6px;\r\n      font-size: 12px;\r\n      margin-top: 4px\r\n}\r\n\r\n.console-pane .tools > div.focus{\r\n  background: #5f5f5f;\r\n  color: #fff;\r\n}\r\n\r\n.main .pane{\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow-x: auto;\r\n  overflow-y: auto;\r\n}\r\n\r\n.console-pane .log-container{\r\n  background: rgba(225, 247, 255, 0.18);\r\n  position: absolute;\r\n  top: 34px;\r\n  width: 100%;\r\n  bottom: 0;\r\n  z-index: -1;\r\n}\r\n\r\n.logitem {\r\n    display: block;\r\n    padding: 10px 6px;\r\n    border-bottom: 1px solid rgba(204, 204, 204, 0.47);\r\n    font-size: 12px;\r\n}\r\n\r\n.logitem.t-warn {\r\n  display: block;\r\n  color: rgba(255, 237, 0, 0.97);\r\n}\r\n\r\n.logitem.t-info {\r\n  display: block;\r\n  color: blue;\r\n}\r\n\r\n.logitem.t-error{\r\n  color: rgba(255, 0, 0, 0.97);\r\n}\r\n\r\n.logitem.t-log::before{\r\n  content: \" > [log]\";\r\n  margin-right: 10px;\r\n}\r\n.logitem.t-warn::before{\r\n  content: \" > [warn]\";\r\n  margin-right: 10px;\r\n}\r\n.logitem.t-info::before{\r\n  content: \" > [info]\";\r\n  margin-right: 10px;\r\n}\r\n.logitem.t-error::before{\r\n  content: \" > [error]\";\r\n  margin-right: 10px;\r\n}\r\n", ""]);
 	
 	// exports
 
@@ -2340,7 +2343,7 @@
 	});
 	
 	exports.default = function () {
-	  var html = (0, _html2.default)();
+	  var html = _template2.default;
 	  var $node = (0, _jquery2.default)(html);
 	
 	  (0, _jquery2.default)('body').append($node);
@@ -2363,9 +2366,9 @@
 	  return $node;
 	};
 	
-	var _html = __webpack_require__(11);
+	var _template = __webpack_require__(11);
 	
-	var _html2 = _interopRequireDefault(_html);
+	var _template2 = _interopRequireDefault(_template);
 	
 	var _jquery = __webpack_require__(12);
 	
@@ -2377,16 +2380,7 @@
 /* 11 */
 /***/ (function(module, exports) {
 
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	            value: true
-	});
-	
-	exports.default = function () {
-	            var html = "<div class=\"fast-console\" id=\"fast-console\">\n              \t<div class=\"co-header\">\n              \t\t<div class=\"co-menu console focus\">Console</div>\n              \t\t<div class=\"co-menu network\">Network</div>\n              \t\t<div class=\"co-menu element\">Element</div>\n              \t</div>\n              \t<div class=\"main\">\n                  <div class=\"console-pane pane\">\n                  </div>\n                  <div class=\"network-pane pane\">network</div>\n                  <div class=\"element-pane pane\">element</div>\n              \t</div>\n              </div>";
-	            return html;
-	};
+	module.exports = "<div class=\"fast-console\" id=\"fast-console\">\r\n  <div class=\"co-header\">\r\n    <div class=\"co-menu console focus\">Console</div>\r\n    <div class=\"co-menu network\">Network</div>\r\n    <div class=\"co-menu element\">Element</div>\r\n  </div>\r\n  <div class=\"main\">\r\n    <div class=\"console-pane pane\">\r\n    </div>\r\n    <div class=\"network-pane pane\">network</div>\r\n    <div class=\"element-pane pane\">element</div>\r\n  </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 12 */
@@ -10384,9 +10378,11 @@
 	  value: true
 	});
 	
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+	
 	exports.default = function ($node) {
 	
-	  var html = (0, _html2.default)();
+	  var html = _template2.default;
 	  var $tools = (0, _jquery2.default)(html);
 	
 	  var logList = [];
@@ -10396,21 +10392,29 @@
 	  var $root = $node;
 	
 	  var _log = window.console.log;
-	  var _warning = window.console.warning;
+	  var _warn = window.console.warn;
 	  var _error = window.console.error;
+	  var _info = window.console.info;
+	
+	  var _onError = window.onError;
 	
 	  window.console.log = function (message) {
 	    logList.push({ message: message, type: 1 });
 	    _log(message);
 	    printLog($root, logType);
 	  };
-	  window.console.warning = function (message) {
+	  window.console.warn = function (message) {
 	    logList.push({ message: message, type: 2 });
-	    _warning(message);
+	    _warn(message);
+	    printLog($root, logType);
+	  };
+	  window.console.info = function (message) {
+	    logList.push({ message: message, type: 3 });
+	    _info(message);
 	    printLog($root, logType);
 	  };
 	  window.console.error = function (message) {
-	    logList.push({ message: message, type: 3 });
+	    logList.push({ message: message, type: 4 });
 	    _error(message);
 	    printLog($root, logType);
 	  };
@@ -10425,6 +10429,7 @@
 	      type: 4
 	    });
 	    printLog($root, logType);
+	    _onError(message, source, lineno, colno, error);
 	  };
 	
 	  function printLog($root, type) {
@@ -10433,7 +10438,7 @@
 	      filterArray = logList;
 	    } else {
 	      filterArray = logList.filter(function (item) {
-	        return item.type === type || item.type === 4;
+	        return item.type === type;
 	      });
 	    }
 	
@@ -10447,25 +10452,63 @@
 	    for (var key in array) {
 	      var $item = $logitem.clone();
 	      var data = array[key];
-	      $item.text(data.message);
+	      if (_typeof(data.message) === 'object') {
+	        $item.text(JSON.stringify(data.message));
+	      } else {
+	        $item.text(data.message);
+	      }
 	      if (data.type === 2) {
 	        $item.addClass('t-warn');
-	      } else if (data.type === 3 || data.type === 4) {
+	      } else if (data.type === 5 || data.type === 4) {
 	        $item.addClass('t-error');
+	      } else if (data.type === 3) {
+	        $item.addClass('t-info');
+	      } else {
+	        $item.addClass('t-log');
 	      }
 	
 	      $root.find('.log-container').append($item);
 	    }
 	  }
 	
+	  function clear() {
+	    $root.find(".log-container").empty();
+	    logList = [];
+	  }
+	
 	  $root.find('.console-pane').append($tools);
 	
 	  printLog($root, 0);
+	
+	  $root.on("click", ".tools > div", function () {
+	    $root.find(".tools > div").removeClass('focus');
+	    var $this = (0, _jquery2.default)(this);
+	    $this.addClass('focus');
+	
+	    var type = void 0;
+	    if ($this.hasClass('log')) {
+	      type = 1;
+	    } else if ($this.hasClass('warn')) {
+	      type = 2;
+	    } else if ($this.hasClass('error')) {
+	      type = 4;
+	    } else if ($this.hasClass('info')) {
+	      type = 3;
+	    } else {
+	      type = 0;
+	    }
+	
+	    printLog($root, type);
+	  });
+	
+	  $root.on('click', '.tools > .clear', function () {
+	    clear();
+	  });
 	};
 	
-	var _html = __webpack_require__(15);
+	var _template = __webpack_require__(15);
 	
-	var _html2 = _interopRequireDefault(_html);
+	var _template2 = _interopRequireDefault(_template);
 	
 	var _jquery = __webpack_require__(12);
 	
@@ -10477,16 +10520,7 @@
 /* 15 */
 /***/ (function(module, exports) {
 
-	"use strict";
-	
-	Object.defineProperty(exports, "__esModule", {
-	  value: true
-	});
-	
-	exports.default = function () {
-	  var html = "<div class=\"tools\">\n                <div class=\"clear\">Clear</div>\n                <div class=\"all focus\">All</div>\n                <div class=\"error\">Error</div>\n                <div class=\"warning\">Warning</div>\n                <div class=\"info\">Info</div>\n                <div class=\"log\">Log</div>\n              </div>\n              <div class=\"log-container\"></div>\n  ";
-	  return html;
-	};
+	module.exports = "<div class=\"tools\">\r\n  <a class=\"clear\">Clear</a>\r\n  <div class=\"all focus\">All</div>\r\n  <div class=\"error\">Error</div>\r\n  <div class=\"warn\">Warn</div>\r\n  <div class=\"info\">Info</div>\r\n  <div class=\"log\">Log</div>\r\n</div>\r\n<div class=\"log-container\"></div>\r\n";
 
 /***/ })
 /******/ ]);

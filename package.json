@@ -26,6 +26,7 @@
     "css-loader": "*",
     "style-loader": "*",
     "jquery": "1.11.1",
-    "html-webpack-plugin": "*"
+    "html-webpack-plugin": "*",
+    "html-loader": "*"
   }
 }

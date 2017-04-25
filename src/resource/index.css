@@ -40,6 +40,8 @@
   display: none;
 }
 .console-pane .tools{
+  width: 100%;
+  position: absolute;
   height: 34px;
   background: #fff;
   box-shadow: 1px 1px 1px #ccc;
@@ -61,4 +63,58 @@
 .console-pane .tools > div.focus{
   background: #5f5f5f;
   color: #fff;
+}
+
+.main .pane{
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.console-pane .log-container{
+  background: rgba(225, 247, 255, 0.18);
+  position: absolute;
+  top: 34px;
+  width: 100%;
+  bottom: 0;
+  z-index: -1;
+}
+
+.logitem {
+    display: block;
+    padding: 10px 6px;
+    border-bottom: 1px solid rgba(204, 204, 204, 0.47);
+    font-size: 12px;
+}
+
+.logitem.t-warn {
+  display: block;
+  color: rgba(255, 237, 0, 0.97);
+}
+
+.logitem.t-info {
+  display: block;
+  color: blue;
+}
+
+.logitem.t-error{
+  color: rgba(255, 0, 0, 0.97);
+}
+
+.logitem.t-log::before{
+  content: " > [log]";
+  margin-right: 10px;
+}
+.logitem.t-warn::before{
+  content: " > [warn]";
+  margin-right: 10px;
+}
+.logitem.t-info::before{
+  content: " > [info]";
+  margin-right: 10px;
+}
+.logitem.t-error::before{
+  content: " > [error]";
+  margin-right: 10px;
 }

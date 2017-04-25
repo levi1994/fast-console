@@ -1,9 +1,9 @@
-import getHtml from './resource/html';
+import template from './resource/template.html';
 import $ from 'jquery';
 
 export default function() {
   // 获得静态页面并转化为jquery node
-  let html = getHtml();
+  let html = template;
   let $node = $(html);
 
   // 将node添加至DOM

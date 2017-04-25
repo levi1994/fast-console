@@ -8,10 +8,10 @@ var conf = {
     path: './dist'
   },
   module: {
-    loaders:[{
-      test: /.\js$/,
-      loader: 'babel!eslint'
-    },{ test: /\.css/, loader: "style-loader!css-loader" }]
+    loaders:[
+      { test: /.\js$/,loader: 'babel!eslint'},
+      { test: /\.css/, loader: "style-loader!css-loader" },
+      { test: /\.html/, loader: "html-loader" }]
   }
   // plugins: [
   //   new webpack.optimize.UglifyJsPlugin()

@@ -1,10 +1,10 @@
-import getHtml from './resource/html';
+import template from './resource/template.html';
 import $ from 'jquery';
 
 // 初始化console相关
 export default function($node) {
 
-  var html = getHtml();
+  var html = template;
   var $tools = $(html);
 
   // 使用list存储所有日志信息
@@ -16,24 +16,31 @@ export default function($node) {
   // 根节点（fast-console）
   let $root = $node;
 
-  // 重写console.log,console.warning,console.error
+  // 代理console.log,console.warning,console.error
   let _log = window.console.log;
-  let _warning = window.console.warning;
+  let _warn = window.console.warn;
   let _error = window.console.error;
+  let _info = window.console.info;
 
+  let _onError = window.onError;
 
   window.console.log = function(message) {
     logList.push({message: message, type: 1});
     _log(message);
     printLog($root, logType);
   };
-  window.console.warning = function(message) {
+  window.console.warn = function(message) {
     logList.push({message: message, type: 2});
-    _warning(message);
+    _warn(message);
+    printLog($root, logType);
+  };
+  window.console.info = function(message) {
+    logList.push({message: message, type: 3});
+    _info(message);
     printLog($root, logType);
   };
   window.console.error = function(message) {
-    logList.push({message: message, type: 3});
+    logList.push({message: message, type: 4});
     _error(message);
     printLog($root, logType);
   };
@@ -49,14 +56,16 @@ export default function($node) {
       type: 4
     });
     printLog($root, logType);
+    _onError(message, source, lineno, colno, error);
   };
 
   // 展示筛选后的日志
   // type为筛选类型
   // 1：log
   // 2：warning
-  // 3: error
-  // 4: 系统错误
+  // 3: info
+  // 4: error
+  // 5: 系统错误
   // 0：All
   function printLog($root, type) {
     let filterArray;
@@ -64,7 +73,7 @@ export default function($node) {
       filterArray = logList;
     } else {
       filterArray = logList.filter(function(item) {
-        return item.type === type || item.type === 4;
+        return item.type === type;
       });
     }
 
@@ -81,15 +90,28 @@ export default function($node) {
     for (var key in array) {
       let $item = $logitem.clone();
       var data = array[key];
-      $item.text(data.message);
+      if (typeof data.message === 'object') {
+        $item.text(JSON.stringify(data.message));
+      } else {
+        $item.text(data.message);
+      }
       if (data.type === 2) {
         $item.addClass('t-warn');
-      } else if (data.type === 3 || data.type === 4) {
+      } else if (data.type === 5 || data.type === 4) {
         $item.addClass('t-error');
+      } else if (data.type === 3) {
+        $item.addClass('t-info');
+      } else {
+        $item.addClass('t-log');
       }
 
       $root.find('.log-container').append($item);
     }
+  }
+
+  function clear() {
+    $root.find(".log-container").empty();
+    logList = [];
   }
 
   // 将渲染tools面板
@@ -99,4 +121,29 @@ export default function($node) {
   printLog($root, 0);
 
   // 添加事件
+  $root.on("click", ".tools > div", function() {
+    $root.find(".tools > div").removeClass('focus');
+    let $this = $(this);
+    $this.addClass('focus');
+
+    let type;
+    if ($this.hasClass('log')) {
+      type = 1;
+    } else if ($this.hasClass('warn')) {
+      type = 2;
+    } else if ($this.hasClass('error')) {
+      type = 4;
+    } else if ($this.hasClass('info')) {
+      type = 3;
+    } else {
+      type = 0;
+    }
+
+    printLog($root, type);
+  });
+
+  // 清空
+  $root.on('click', '.tools > .clear', function() {
+    clear();
+  });
 }
