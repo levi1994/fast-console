@@ -1,14 +1,13 @@
 import css from './resource/index.css';
 import initMain from './main';
-import initConsole from './console';
-
-console.log(css);
+import Console from './console';
+import Network from './network';
+import Element from './element';
+import Timeline from './timeline';
 
 // 初始化主界面
 var $node = initMain();
-initConsole($node);
-
-console.log("This is log");
-console.warn("This is warn");
-console.error("This is error");
-console.info("This is info");
+var consoleComp = new Console($node);
+var networkComp = new Network($node);
+var elementComp = new Element($node);
+var timelineComp = new Timeline($node);

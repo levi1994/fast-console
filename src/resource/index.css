@@ -4,9 +4,11 @@
   bottom: 0;
   left:0;
   right: 0;
+  background: #fff;
+  display: none;
 }
 .fast-console .co-header{
-  display: block;
+  display: flex;
   width: 100%;
   height: 56px;
   background: rgb(32, 160, 255);
@@ -74,23 +76,25 @@
 
 .console-pane .log-container{
   background: rgba(225, 247, 255, 0.18);
-  position: absolute;
   top: 34px;
   width: 100%;
   bottom: 0;
   z-index: -1;
+  overflow-y: auto;
+  padding-top: 40px;
 }
 
 .logitem {
     display: block;
-    padding: 10px 6px;
+    padding: 10px 14px;
     border-bottom: 1px solid rgba(204, 204, 204, 0.47);
     font-size: 12px;
 }
 
 .logitem.t-warn {
-  display: block;
-  color: rgba(255, 237, 0, 0.97);
+  background: rgba(251, 222, 70, 0.07);
+      display: block;
+      color: rgba(183, 171, 3, 0.97);
 }
 
 .logitem.t-info {
@@ -99,22 +103,359 @@
 }
 
 .logitem.t-error{
-  color: rgba(255, 0, 0, 0.97);
+  color: rgba(255, 0, 0, 0.97) !important;
+      background: rgba(255, 191, 191, 0.31);
 }
 
 .logitem.t-log::before{
-  content: " > [log]";
+  content: "";
   margin-right: 10px;
 }
 .logitem.t-warn::before{
-  content: " > [warn]";
-  margin-right: 10px;
+  content: "\e648";
 }
 .logitem.t-info::before{
-  content: " > [info]";
-  margin-right: 10px;
+  content: "\e611";
 }
 .logitem.t-error::before{
-  content: " > [error]";
+  content: "\e613";
+}
+
+.network-pane .r-header,.network-pane .x-header{
+  display: block;
+  background: #6b6b6b;
+  color: #fff;
+  font-size: 14px;
+  height: 40px;
+  line-height: 40px;
+  padding-left: 10px;
+}
+.network-pane .resource,.network-pane .xhr,.network-pane .request,.network-pane .response{
+  display: block;
+  box-shadow: 1px 1px 1px #ccc;
+  margin-top: 10px;
+}
+
+.network-pane .xhr{
+  margin-top: 20px;
+}
+.r-item,.x-item{
+  display: flex;
+  padding: 8px 4px;
+  font-size: 12px;
+}
+.r-item > div,.x-item > div{
+  text-align: center;
+  padding:0 4px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.fullname{
+  color: rgb(32, 160, 255);
+}
+
+.r-item .name{
+  flex:1;
+}
+.r-item .time{
+  flex:1;
+}
+.r-item .fullname{
+  flex:4;
+}
+
+.x-item .type{
+  flex:1;
+}
+.x-item .status{
+  flex:1;
+}
+.x-item .method{
+  flex:1;
+}
+.x-item .time{
+  flex:1;
+}
+.x-item .fullname{
+  flex:4;
+}
+
+.iconfont.icon-jinzhi{
+  float: left;
+  margin-top: 8px;
+  font-size: 20px;
+  margin-left: 6px;
   margin-right: 10px;
+  color: #5f5f5f;
+}
+
+.btn-block{
+  position: fixed;
+  bottom: 100px;
+  right: 60px;
+}
+.btn-block i.iconfont {
+  position: absolute;
+  font-size: 30px;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-block .open-console{
+  transition: all .2s cubic-bezier(0, 0.97, 0.78, 1.04);
+  transition-delay: 0;
+  opacity: 0;
+}
+.btn-block .open-network{
+  transition: all .2s cubic-bezier(0, 0.97, 0.78, 1.04);
+  transition-delay: .1s;
+  opacity: 0;
+}
+.btn-block .open-element{
+  transition: all .2s cubic-bezier(0, 0.97, 0.78, 1.04);
+  transition-delay: .2s;
+  opacity: 0;
+}
+.open-element,.open-console,.open-network{
+  display: block;
+      background: #2f2f2f;
+      color: #fff;
+      font-size: 18px !important;
+      padding: 6px;
+      border-radius: 50%;
+}
+
+.btn-block.hover .open-console{
+    transform: translate(-37px,-45px);
+    opacity: 1;
+}
+.btn-block.hover .open-network{
+    transform: translate(-60px,0px);
+    opacity: 1;
+}
+.btn-block.hover .open-element{
+    transform: translate(-37px,45px);
+    opacity: 1;
+}
+
+.btn-block.hover .all{
+  color:#20a0ff;
+}
+
+.error > div {
+  color: red !important;
+}
+
+.network-detail{
+  display: none;
+}
+
+.network-detail .detail-top{
+  display: flex;
+  align-items: center;
+  box-shadow: 1px 1px 1px #ccc;
+  background: #fff;
+  margin-bottom: 6px;
+  padding: 10px 0;
+  font-size: 14px;
+  color: #4a4a4a;
+}
+.detail-top .back{
+  width: 60px;
+  border-right: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.urlinfo{
+  display: flex;
+  align-items: center;
+  padding-left: 12px;
+}
+.t-method {
+    padding-right: 8px;
+    color: #000;
+}
+.request-body > div,.response-body > div {
+    padding: 4px 10px;
+    color: #868686;
+    font-size: 14px;
+}
+
+.request-body,.response-body{
+  display: block;
+  padding:10px 0;
+}
+
+.content {
+  color:#000 !important;
+  font-size: 12px;
+}
+
+.node,.textnode {
+  font-size: 12px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-weight: bold;
+  display: none;
+}
+
+.node .node,.node .textnode {
+    padding-left: 16px;
+}
+
+.node.open{
+  display: block;
+}
+
+.textnode{
+  font-weight: normal;
+}
+
+.textnode.open{
+  display: block;
+}
+
+.node::before{
+  content: "\e62b";
+  color: #b9b9b9;
+}
+
+.node.drop::before{
+  content: "\e618";
+}
+.nocontent::before{
+  display: none;
+}
+
+span.tagstyle {
+  color: #bb85b7;
+  font-weight: 400;
+}
+span.key {
+    color: #caa106;
+    font-weight: normal;
+}
+span.equals {
+    color: #caa106;
+    font-weight: normal;
+}
+span.value {
+    color: #005b92;
+    font-weight: normal;
+}
+
+.stage{
+  display: block;
+  width: 100%;
+  background: #fff;
+}
+
+.stage > div{
+  display: block;
+  height: 20px;
+}
+
+.stage > div .t-block{
+  width: 20px;
+  height: 20px;
+}
+
+.loadTime .t-block{
+  background: #0066FF;
+}
+.domReadyTime .t-block{
+  background: #00CCFF;
+}
+.redirectTime .t-block{
+  background: #33CC33;
+}
+.appcacheTime .t-block{
+  background: #660066;
+}
+.unloadEventTime .t-block{
+  background: #669999;
+}
+.lookupDomainTime .t-block{
+  background: #9900FF;
+}
+.connectTime .t-block{
+  background: #999999;
+}
+.requestTime .t-block{
+  background: #CC0099;
+}
+.initDomTreeTime .t-block{
+  background: #CCCC33;
+}
+.loadEventTime .t-block{
+  background: #FF0099;
+}
+
+span.tl-name {
+    color: #888;
+    padding-left: 12px;
+    margin: 12px 10px;
+}
+
+span.tl-value {
+    font-size: 14px;
+}
+
+.logitem > div {
+  display: inline-block !important;
+}
+
+span.isObject {
+    font-weight: 400;
+    font-style: italic;
+    margin-right: 10px;
+}
+span.c-key {
+    font-weight: 400;
+    color: #800777;
+}
+
+span.c-value {
+    font-weight: 400;
+    /*color: #002479;*/
+}
+
+div.coding-pane{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left:0;
+  right:0;
+  height: 40px;
+  line-height: 40px;
+      border-top: 1px solid #ccc;
+}
+.coding-pane .code-input{
+  flex: 6;
+  background: #fff;
+  border: none;
+  padding-left: 10px;
+}
+.coding-pane .code-submit{
+  box-shadow: none;
+  border: none;
+  flex: 2;
+  text-align: center;
+  line-height: 40px;
+  background: #fff;
+  color: #000;
+  border-left: 1px solid #ccc;
+}
+.rootnode .node,.rootnode .textnode{
+  font-size: 12px;
+}
+
+.iconfont span {
+  font-size: 12px;
+    font-family: Microsoft Yahei;
 }

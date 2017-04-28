@@ -60,15 +60,10 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	console.log(_index2.default);
-	
 	var $node = (0, _main2.default)();
-	(0, _console2.default)($node);
-	
-	console.log("This is log");
-	console.warn("This is warn");
-	console.error("This is error");
-	console.info("This is info");
+	var consoleComp = new _console2.default($node);
+	consoleComp;
+	_index2.default;
 
 /***/ }),
 /* 1 */
@@ -105,7 +100,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".fast-console{\r\n  position: fixed;\r\n  top:0;\r\n  bottom: 0;\r\n  left:0;\r\n  right: 0;\r\n}\r\n.fast-console .co-header{\r\n  display: block;\r\n  width: 100%;\r\n  height: 56px;\r\n  background: rgb(32, 160, 255);\r\n  box-shadow: -1px 1px 8px #989898;\r\n  cursor: pointer;\r\n  position: fixed;\r\n}\r\n.co-header div{\r\n  display: block;\r\n  float: left;\r\n  width: auto;\r\n  height: 100%;\r\n  line-height: 56px;\r\n  padding: 0 20px;\r\n  color: #fff;\r\n  box-sizing: border-box;\r\n  font-size: 14px;\r\n}\r\n.fast-console .main{\r\n  position: absolute;\r\n  top: 60px;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n.co-header div.focus{\r\n  background: rgba(255, 255, 255, 0.24);\r\n  border-bottom: 4px solid #fff;\r\n}\r\n.main .element-pane,.main .network-pane{\r\n  display: none;\r\n}\r\n.console-pane .tools{\r\n  width: 100%;\r\n  position: absolute;\r\n  height: 34px;\r\n  background: #fff;\r\n  box-shadow: 1px 1px 1px #ccc;\r\n}\r\n.console-pane .tools > div {\r\n  display: block;\r\n      float: left;\r\n      margin-left: 6px;\r\n      height: 16px;\r\n      line-height: 16px;\r\n      border-radius: 4px;\r\n      background: #fff;\r\n      color: #000;\r\n      padding: 4px 6px;\r\n      font-size: 12px;\r\n      margin-top: 4px\r\n}\r\n\r\n.console-pane .tools > div.focus{\r\n  background: #5f5f5f;\r\n  color: #fff;\r\n}\r\n\r\n.main .pane{\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow-x: auto;\r\n  overflow-y: auto;\r\n}\r\n\r\n.console-pane .log-container{\r\n  background: rgba(225, 247, 255, 0.18);\r\n  position: absolute;\r\n  top: 34px;\r\n  width: 100%;\r\n  bottom: 0;\r\n  z-index: -1;\r\n}\r\n\r\n.logitem {\r\n    display: block;\r\n    padding: 10px 6px;\r\n    border-bottom: 1px solid rgba(204, 204, 204, 0.47);\r\n    font-size: 12px;\r\n}\r\n\r\n.logitem.t-warn {\r\n  display: block;\r\n  color: rgba(255, 237, 0, 0.97);\r\n}\r\n\r\n.logitem.t-info {\r\n  display: block;\r\n  color: blue;\r\n}\r\n\r\n.logitem.t-error{\r\n  color: rgba(255, 0, 0, 0.97);\r\n}\r\n\r\n.logitem.t-log::before{\r\n  content: \" > [log]\";\r\n  margin-right: 10px;\r\n}\r\n.logitem.t-warn::before{\r\n  content: \" > [warn]\";\r\n  margin-right: 10px;\r\n}\r\n.logitem.t-info::before{\r\n  content: \" > [info]\";\r\n  margin-right: 10px;\r\n}\r\n.logitem.t-error::before{\r\n  content: \" > [error]\";\r\n  margin-right: 10px;\r\n}\r\n", ""]);
+	exports.push([module.id, ".fast-console{\r\n  position: fixed;\r\n  top:0;\r\n  bottom: 0;\r\n  left:0;\r\n  right: 0;\r\n}\r\n.fast-console .co-header{\r\n  display: block;\r\n  width: 100%;\r\n  height: 56px;\r\n  background: rgb(32, 160, 255);\r\n  box-shadow: -1px 1px 8px #989898;\r\n  cursor: pointer;\r\n  position: fixed;\r\n}\r\n.co-header div{\r\n  display: block;\r\n  float: left;\r\n  width: auto;\r\n  height: 100%;\r\n  line-height: 56px;\r\n  padding: 0 20px;\r\n  color: #fff;\r\n  box-sizing: border-box;\r\n  font-size: 14px;\r\n}\r\n.fast-console .main{\r\n  position: absolute;\r\n  top: 60px;\r\n  bottom: 0;\r\n  left: 0;\r\n  right: 0;\r\n}\r\n.co-header div.focus{\r\n  background: rgba(255, 255, 255, 0.24);\r\n  border-bottom: 4px solid #fff;\r\n}\r\n.main .element-pane,.main .network-pane{\r\n  display: none;\r\n}\r\n.console-pane .tools{\r\n  width: 100%;\r\n  position: absolute;\r\n  height: 34px;\r\n  background: #fff;\r\n  box-shadow: 1px 1px 1px #ccc;\r\n}\r\n.console-pane .tools > div {\r\n  display: block;\r\n      float: left;\r\n      margin-left: 6px;\r\n      height: 16px;\r\n      line-height: 16px;\r\n      border-radius: 4px;\r\n      background: #fff;\r\n      color: #000;\r\n      padding: 4px 6px;\r\n      font-size: 12px;\r\n      margin-top: 4px\r\n}\r\n\r\n.console-pane .tools > div.focus{\r\n  background: #5f5f5f;\r\n  color: #fff;\r\n}\r\n\r\n.main .pane{\r\n  width: 100%;\r\n  height: 100%;\r\n  overflow-x: auto;\r\n  overflow-y: auto;\r\n}\r\n\r\n.console-pane .log-container{\r\n  background: rgba(225, 247, 255, 0.18);\r\n  position: absolute;\r\n  top: 34px;\r\n  width: 100%;\r\n  bottom: 0;\r\n  z-index: -1;\r\n}\r\n\r\n.logitem {\r\n    display: block;\r\n    padding: 10px 6px;\r\n    border-bottom: 1px solid rgba(204, 204, 204, 0.47);\r\n    font-size: 12px;\r\n}\r\n\r\n.logitem.t-warn {\r\n  display: block;\r\n  color: rgba(255, 237, 0, 0.97);\r\n}\r\n\r\n.logitem.t-info {\r\n  display: block;\r\n  color: blue;\r\n}\r\n\r\n.logitem.t-error{\r\n  color: rgba(255, 0, 0, 0.97);\r\n}\r\n\r\n.logitem.t-log::before{\r\n  content: \" > [log]\";\r\n  margin-right: 10px;\r\n}\r\n.logitem.t-warn::before{\r\n  content: \" > [warn]\";\r\n  margin-right: 10px;\r\n}\r\n.logitem.t-info::before{\r\n  content: \" > [info]\";\r\n  margin-right: 10px;\r\n}\r\n.logitem.t-error::before{\r\n  content: \" > [error]\";\r\n  margin-right: 10px;\r\n}\r\n\r\n.network-pane .r-header,.network-pane .x-header{\r\n  display: block;\r\n  background: #6b6b6b;\r\n  color: #fff;\r\n  font-size: 14px;\r\n  height: 40px;\r\n  line-height: 40px;\r\n  padding-left: 10px;\r\n}\r\n.network-pane .resource,.network-pane .xhr{\r\n  display: block;\r\n  box-shadow: 1px 1px 1px #ccc;\r\n}\r\n.network-pane .xhr{\r\n  margin-top: 20px;\r\n}\r\n.r-item,.x-item{\r\n  display: flex;\r\n  padding: 8px 4px;\r\n  font-size: 12px;\r\n}\r\n.r-item > div,.x-item > div{\r\n  text-align: center;\r\n  padding:0 4px;\r\n  overflow: hidden;\r\n  white-space: nowrap;\r\n  text-overflow: ellipsis;\r\n}\r\n\r\n.fullname{\r\n  color: rgb(32, 160, 255);\r\n}\r\n\r\n.r-item .name{\r\n  flex:1;\r\n}\r\n.r-item .time{\r\n  flex:1;\r\n}\r\n.r-item .fullname{\r\n  flex:4;\r\n}\r\n\r\n.x-item .name{\r\n  flex:1;\r\n}\r\n.x-item .status{\r\n  flex:1;\r\n}\r\n.x-item .method{\r\n  flex:1;\r\n}\r\n.x-item .time{\r\n  flex:1;\r\n}\r\n.x-item .fullname{\r\n  flex:4;\r\n}\r\n", ""]);
 	
 	// exports
 
@@ -2342,7 +2337,17 @@
 	  value: true
 	});
 	
-	exports.default = function () {
+	var _template = __webpack_require__(11);
+	
+	var _template2 = _interopRequireDefault(_template);
+	
+	var _jquery = __webpack_require__(12);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function Main() {
 	  var html = _template2.default;
 	  var $node = (0, _jquery2.default)(html);
 	
@@ -2364,23 +2369,15 @@
 	  });
 	
 	  return $node;
-	};
+	}
 	
-	var _template = __webpack_require__(11);
-	
-	var _template2 = _interopRequireDefault(_template);
-	
-	var _jquery = __webpack_require__(12);
-	
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	exports.default = Main;
 
 /***/ }),
 /* 11 */
 /***/ (function(module, exports) {
 
-	module.exports = "<div class=\"fast-console\" id=\"fast-console\">\r\n  <div class=\"co-header\">\r\n    <div class=\"co-menu console focus\">Console</div>\r\n    <div class=\"co-menu network\">Network</div>\r\n    <div class=\"co-menu element\">Element</div>\r\n  </div>\r\n  <div class=\"main\">\r\n    <div class=\"console-pane pane\">\r\n    </div>\r\n    <div class=\"network-pane pane\">network</div>\r\n    <div class=\"element-pane pane\">element</div>\r\n  </div>\r\n</div>\r\n";
+	module.exports = "<div class=\"fast-console\" id=\"fast-console\">\r\n  <div class=\"co-header\">\r\n    <div class=\"co-menu console focus\">Console</div>\r\n    <div class=\"co-menu network\">Network</div>\r\n    <div class=\"co-menu element\">Element</div>\r\n  </div>\r\n  <div class=\"main\">\r\n    <div class=\"console-pane pane\">\r\n    </div>\r\n    <div class=\"network-pane pane\">\r\n      <div class=\"resource\">\r\n        <div class=\"r-header\">Resource Timing</div>\r\n        <div class=\"r-content\">\r\n          <div class=\"r-item\">\r\n            <div class=\"name\">style.css</div>\r\n            <div class=\"time\">200ms</div>\r\n            <div class=\"fullname\">http://cdn.cloud.com/style.css</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"xhr\">\r\n        <div class=\"x-header\">XMLHttpRequest</div>\r\n        <div class=\"x-content\">\r\n          <div class=\"x-item\">\r\n            <div class=\"name\">style.css</div>\r\n            <div class=\"status\">200</div>\r\n            <div class=\"method\">POST</div>\r\n            <div class=\"time\">200ms</div>\r\n            <div class=\"fullname\">http://cdn.cloud.com/style.css</div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"element-pane pane\">element</div>\r\n  </div>\r\n</div>\r\n";
 
 /***/ }),
 /* 12 */
@@ -10380,47 +10377,85 @@
 	
 	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
 	
-	exports.default = function ($node) {
+	var _template = __webpack_require__(15);
+	
+	var _template2 = _interopRequireDefault(_template);
+	
+	var _jquery = __webpack_require__(12);
+	
+	var _jquery2 = _interopRequireDefault(_jquery);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function Console($node) {
 	
 	  var html = _template2.default;
 	  var $tools = (0, _jquery2.default)(html);
 	
-	  var logList = [];
+	  this.logList = [];
 	
-	  var logType = 0;
+	  this.logType = 0;
 	
-	  var $root = $node;
+	  this.$root = $node;
+	
+	  this.$root.find('.console-pane').append($tools);
+	
+	  this._overrideConsole();
+	  this._overrideOnerror();
+	
+	  this._bindEvent();
+	}
+	
+	Console.prototype._overrideConsole = function () {
+	  var _this = this;
 	
 	  var _log = window.console.log;
 	  var _warn = window.console.warn;
 	  var _error = window.console.error;
 	  var _info = window.console.info;
 	
-	  var _onError = window.onError;
-	
-	  window.console.log = function (message) {
-	    logList.push({ message: message, type: 1 });
+	  console.log = function (message) {
+	    _this.logList.push({ message: message, type: 1 });
 	    _log(message);
-	    printLog($root, logType);
+	    _this._printLog(_this.logType);
 	  };
-	  window.console.warn = function (message) {
-	    logList.push({ message: message, type: 2 });
+	  console.warn = function (message) {
+	    _this.logList.push({ message: message, type: 2 });
 	    _warn(message);
-	    printLog($root, logType);
+	    _this._printLog(_this.logType);
 	  };
-	  window.console.info = function (message) {
-	    logList.push({ message: message, type: 3 });
+	  console.info = function (message) {
+	    _this.logList.push({ message: message, type: 3 });
 	    _info(message);
-	    printLog($root, logType);
+	    _this._printLog(_this.logType);
 	  };
-	  window.console.error = function (message) {
-	    logList.push({ message: message, type: 4 });
+	  console.error = function (message) {
+	    _this.logList.push({ message: message, type: 4 });
 	    _error(message);
-	    printLog($root, logType);
+	    _this._printLog(_this.logType);
 	  };
+	};
+	
+	Console.prototype._printLog = function (type) {
+	  var filterArray = void 0;
+	  if (type === 0) {
+	    filterArray = this.logList;
+	  } else {
+	    filterArray = this.logList.filter(function (item) {
+	      return item.type === type;
+	    });
+	  }
+	
+	  this._render(filterArray);
+	};
+	
+	Console.prototype._overrideOnerror = function () {
+	  var _onerror = window.onerror;
+	
+	  var self = this;
 	
 	  window.onerror = function (message, source, lineno, colno, error) {
-	    logList.push({
+	    self.logList.push({
 	      message: message,
 	      source: source,
 	      lineno: lineno,
@@ -10428,60 +10463,47 @@
 	      error: error,
 	      type: 4
 	    });
-	    printLog($root, logType);
-	    _onError(message, source, lineno, colno, error);
+	    self._printLog(self.$root, self.logType);
+	    _onerror(message, source, lineno, colno, error);
 	  };
+	};
 	
-	  function printLog($root, type) {
-	    var filterArray = void 0;
-	    if (type === 0) {
-	      filterArray = logList;
+	Console.prototype._render = function (array) {
+	  this.$root.find(".log-container").empty();
+	  var $logitem = (0, _jquery2.default)('<div class="logitem"></div>');
+	
+	  for (var key in array) {
+	    var $item = $logitem.clone();
+	    var data = array[key];
+	    if (_typeof(data.message) === 'object') {
+	      $item.text(JSON.stringify(data.message));
 	    } else {
-	      filterArray = logList.filter(function (item) {
-	        return item.type === type;
-	      });
+	      $item.text(data.message);
+	    }
+	    if (data.type === 2) {
+	      $item.addClass('t-warn');
+	    } else if (data.type === 5 || data.type === 4) {
+	      $item.addClass('t-error');
+	    } else if (data.type === 3) {
+	      $item.addClass('t-info');
+	    } else {
+	      $item.addClass('t-log');
 	    }
 	
-	    render($root, filterArray);
+	    this.$root.find('.log-container').append($item);
 	  }
+	};
 	
-	  function render($root, array) {
-	    $root.find(".log-container").empty();
-	    var $logitem = (0, _jquery2.default)('<div class="logitem"></div>');
+	Console.prototype._clear = function () {
+	  this.$root.find(".log-container").empty();
+	  this.logList = [];
+	};
 	
-	    for (var key in array) {
-	      var $item = $logitem.clone();
-	      var data = array[key];
-	      if (_typeof(data.message) === 'object') {
-	        $item.text(JSON.stringify(data.message));
-	      } else {
-	        $item.text(data.message);
-	      }
-	      if (data.type === 2) {
-	        $item.addClass('t-warn');
-	      } else if (data.type === 5 || data.type === 4) {
-	        $item.addClass('t-error');
-	      } else if (data.type === 3) {
-	        $item.addClass('t-info');
-	      } else {
-	        $item.addClass('t-log');
-	      }
+	Console.prototype._bindEvent = function () {
+	  var self = this;
 	
-	      $root.find('.log-container').append($item);
-	    }
-	  }
-	
-	  function clear() {
-	    $root.find(".log-container").empty();
-	    logList = [];
-	  }
-	
-	  $root.find('.console-pane').append($tools);
-	
-	  printLog($root, 0);
-	
-	  $root.on("click", ".tools > div", function () {
-	    $root.find(".tools > div").removeClass('focus');
+	  self.$root.on("click", ".tools > div", function () {
+	    self.$root.find(".tools > div").removeClass('focus');
 	    var $this = (0, _jquery2.default)(this);
 	    $this.addClass('focus');
 	
@@ -10498,23 +10520,15 @@
 	      type = 0;
 	    }
 	
-	    printLog($root, type);
+	    self._printLog(type);
 	  });
 	
-	  $root.on('click', '.tools > .clear', function () {
-	    clear();
+	  self.$root.on('click', '.tools > .clear', function () {
+	    self._clear();
 	  });
 	};
 	
-	var _template = __webpack_require__(15);
-	
-	var _template2 = _interopRequireDefault(_template);
-	
-	var _jquery = __webpack_require__(12);
-	
-	var _jquery2 = _interopRequireDefault(_jquery);
-
-	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	exports.default = Console;
 
 /***/ }),
 /* 15 */
